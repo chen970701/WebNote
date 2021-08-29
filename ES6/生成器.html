@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rec
+        {
+            background-color: rgb(231, 64, 64);
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <span class="rec"></span>
+    <span class="rec"></span>
+    <span class="rec"></span>
+</body>
+<script>
+    function getName()
+    {
+        setTimeout(function(){
+            var name="green";
+            iterator.next(name);
+        },1000);
+    }
+    function getAge()
+    {
+        setTimeout(function(){
+            var age=12;
+            iterator.next(age);
+        },2000);
+    }
+    function * GetInfo()
+    {
+        console.log("开始拿用户信息");
+        var name=yield getName();
+        console.log("name:"+name);
+
+        var age=yield getAge();
+        console.log("age:"+age)
+
+
+    }
+    var iterator=GetInfo();
+    iterator.next();
+</script>
+</html>

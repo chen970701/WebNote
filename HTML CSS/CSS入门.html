@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css入门</title>
+    <link href="css/myCss.css" rel="stylesheet">
+    <style>
+        h1,h2{
+            color: blue;
+        }
+        /* * {
+            color: blueviolet;
+        } */
+        /* 以p开头 */
+        p[title^="p"]  
+        {
+            color:burlywood
+        }
+        /* 除了第二个以外注释 */
+        ul>li:not(:nth-of-type(2))
+        {
+            color: rgb(4, 236, 178);
+        }
+        a:hover
+        {
+            font-size: 20px;
+        }
+        a:link
+        {
+            color: rgb(230, 201, 201);
+        }
+        a:visited
+        {
+            color: yellow;
+        }
+        a:active
+        {
+            color: greenyellow;
+        }
+        .article::first-letter
+        {
+            font-size: 30px;
+        }
+        .article::first-line
+        {
+           color: grey;
+        }
+        .article::selection
+        {
+            background-color:lightblue;
+        }
+        p::before 
+        {
+            color: red;
+            content: "❤";
+        }
+        p::after 
+        {
+            color: red;
+            content: "❤";
+        }
+    </style>
+</head>
+<body>
+    <p>hello world</p>
+    你好
+    <h1>H1</h1>
+    <h2>H2</h2>
+    <h3>H3</h3>
+    <p title="p1">p1</p>
+    <p title="p2">p2</p>
+    <p title="p3">p3</p>
+
+    <ul>
+       <p>城市</p>
+       <li>北京</li> 
+       <li>上海</li>
+       <li>广州</li>
+       <li>深圳</li>
+       <li>杭州</li>
+    </ul>
+
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+    <p class="article">　
+
+        道可道，非常道；名可名，非常名。无,名天地之始，有,名万物之母。故常无,欲以观其妙；常
+        
+        有,欲以观其徼（jiào）。此两者同出而异名，同谓之玄，玄之又玄，众妙之门。〖译文〗</p>
+</body>
+</html>

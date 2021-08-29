@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rec
+        {
+            background-color: rgb(231, 64, 64);
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <span class="rec"></span>
+    <span class="rec"></span>
+    <span class="rec"></span>
+</body>
+<script>
+    window.onload=function()
+    {
+       let xiyou=['唐僧','沙僧','猪八戒','孙悟空'];
+       for(let v of xiyou)
+       {
+           console.log(v)
+       }
+       for(let v in xiyou)//返回index
+       {
+           console.log(v)
+       }
+
+       let it=xiyou[Symbol.iterator]();
+       console.log( it.next())
+       console.log( it.next())
+       console.log( it.next())
+       console.log( it.next())
+       console.log( it.next())
+       console.log( it.next())
+    }
+</script>
+</html>

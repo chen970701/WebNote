@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .boxWrap
+        {
+            display: flex;
+            align-items: center;
+            background-color: turquoise;
+         
+        }
+        .box1
+        {
+            background-color: violet;
+            width: 200px;
+            height: 200px;
+            /* flex-grow: 1; */
+        }
+        .box2
+        {
+            background-color: tomato;
+            width: 100px;
+            height: 100px;
+            /* 给子元素开启自适应伸展 */
+            flex-grow: 1;
+        }
+        .box3
+        {
+            background-color: yellow;
+            width: 400px;
+            height: 50px;
+
+        }
+        .boxWrap1
+        {
+            display: flex;
+            flex-wrap: wrap;
+            /* 靠右对齐 */
+            flex-direction: row-reverse;
+            background-color:turquoise;
+            /* 左中右间隔一样的 */
+            justify-content:center;
+            /* 左右一格 中间两格 */
+            /* justify-content: space-around; */
+            /* 左右无 中间平均 */
+            /* justify-content: space-between; */
+            align-items: flex-end;
+        }
+        .box4
+        {
+            background-color: violet;
+            width: 200px;
+            height: 200px;
+        }
+        .box5
+        {
+            background-color: tomato;
+            width: 100px;
+            height: 300px;
+            /* flex-grow会抑制住justify-content */
+            /* flex-grow: 1; */
+        }
+        .box6
+        {
+            background-color: yellow;
+            width: 300px;
+            height: 50px;
+
+        }
+
+        .boxWrap2
+        {
+            display: flex;
+            flex-wrap: wrap;
+            /* 靠右对齐 */
+            flex-direction: row-reverse;
+            background-color:lightcoral;
+            /* 左中右间隔一样的 */
+            justify-content:center;
+            align-items: center;
+            align-content:flex-start;
+            height: 500px;
+        }
+        .box7
+        {
+            background-color: violet;
+            width: 200px;
+            height: 200px;
+        }
+        .box8
+        {
+            background-color: red;
+            width: 100px;
+            height: 300px;
+        
+        }
+        .box9
+        {
+            background-color: yellow;
+            width: 400px;
+            height: 50px;
+
+        }
+        .box10
+        {
+            background-color: green;
+            width: 500px;
+            height: 50px;
+
+        }
+
+        .boxWrap3
+        {
+            display: flex;
+            flex-wrap: wrap;
+            background-color:turquoise;
+            /* 左中右间隔一样的 */
+            justify-content:center;
+            /* 左右一格 中间两格 */
+            /* justify-content: space-around; */
+            /* 左右无 中间平均 */
+            /* justify-content: space-between; */
+            align-items: flex-end;
+            height: 500px;
+        }
+        .box11
+        {
+            background-color: violet;
+            width: 200px;
+            height: 200px;
+            order: 3;
+            align-self: flex-start;
+        }
+        .box12
+        {
+            background-color: tomato;
+            width: 100px;
+            height: 300px;
+            order: 1;
+            /* flex-grow会抑制住justify-content */
+            /* flex-grow: 1; */
+        }
+        .box13
+        {
+            background-color: yellow;
+            width: 300px;
+            height: 50px;
+            order: 2;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="boxWrap">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    <div class="boxWrap1">
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+    </div>
+
+    <div class="boxWrap2">
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+        <div class="box10"></div>
+    </div>
+
+    <div class="boxWrap3">
+        <div class="box11"></div>
+        <div class="box12"></div>
+        <div class="box13"></div>
+    </div>
+
+</body>
+</html>

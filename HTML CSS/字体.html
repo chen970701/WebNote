@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体</title>
+    <link rel="stylesheet" href="./fa/css/font-awesome.css">
+    <style>
+        .glass{
+              color: red;
+        }
+        li{
+            list-style: none;
+        }
+        li::before
+        {
+            content:"\f001";
+            font-family: 'FontAwesome';
+            font-weight: normal;
+            font-style: normal;
+            margin-right: 10px;
+        }
+        .box
+        {
+            background-color: brown;
+            /* 通过line-height来垂直居中 line-height: 100px; */
+            font-size: 50px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            text-decoration: underline;
+            height: 100px;
+        }
+        .box span
+        {
+            font-size: 14px;
+            vertical-align:middle;
+        }
+        .box2
+        {
+            background-color: blueviolet;
+        }
+        .box2 img{
+            width: 200px;
+            /*vertical-align可以使图片没有留白  */
+            vertical-align: middle;
+            float: left;
+            margin-right: 50px;
+        }
+        .clearfix::after,
+        .clearfix::before
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .box3
+        {
+            width: 300px;
+            background-color: cornflowerblue;
+            white-space:nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+    </style>
+</head>
+<body>
+    <span class="fa fa-glass glass">酒杯</span>
+    <ul>
+        <li>喝酒</li>
+        <li>音乐</li>
+        <li>哈皮</li>
+    </ul>
+    <span class="fa">&#xf003</span>
+
+    <div class="box">
+        Hello Green
+        <span>Apple</span>
+    </div>
+
+    <div class="box2 clearfix">
+        <img src="./素材/Rocket.jpg">
+        <img src="./素材/Rocket.jpg">
+        <img src="./素材/Rocket.jpg">
+        <img src="./素材/Rocket.jpg">
+        <img src="./素材/Rocket.jpg">
+    </div>
+
+    <div class="box3">
+        亲爱的，你在哪里？在我最鲜艳的时候，无处寻觅你流浪的足迹。
+        怀抱小小的惊喜，我在等你，等你深情的目光写意花的春秋。
+        蜜蜂来了又走，蝴蝶朝我妖媚地笑，诱惑我为黑夜开放最初的芬芳。不，枝头清寒，我拒绝所有华丽的喧哗。
+        站在阳光的指尖上舞蹈，无人为我的青春喝彩。月光如水，等待的尽头依然是一池秋意。
+        从青涩到红润，只为你守住纯洁的疼痛？亲爱的，你在哪里？为何我的双手抓不住你漂浮的身影？
+        是温柔的水草缠住了你归航的扁舟，还是在桃林里找不到安全的出口？
+        望断天涯路，依然不见你神秘的踪迹，空有一树繁花迷离。风雨过后，残红点点，那是我留给你的尘世怀念。
+        ——一朵花的自述
+    </div>
+</body>
+</html>

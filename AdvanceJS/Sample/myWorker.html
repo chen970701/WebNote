@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="myWorker.js"></script>
+</head>
+<body>
+<input placeholder="输入数字" id="num">
+<button id="cal">计算</button>
+<script>
+    document.getElementById("cal").onclick=function () {
+        var num=document.getElementById("num").value;
+        var myWorker=new Worker("myWorker.js");
+        myWorker.postMessage(num);
+        myWorker.onmessage=function(event)
+        {
+            alert(event.data);//返回worker返回的数据
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testClass</title>
+</head>
+<body>
+    <script>
+        class Person
+        {
+            static footNumber=2;
+            constructor(name,age)
+            {
+                this._name=name;
+                this._age=age;
+            }
+            get age()
+            {
+                return this._age;
+            }
+            set age(v)
+            {
+               if(v<100)
+               {
+                    this._age=v;
+                    console.log(this._name+"的年龄修改为"+this._age)
+               }
+
+            }
+            eat()
+            {
+                console.log(this._name+"会吃饭")
+            }
+        
+        }
+        let xiaotian=new Person("小天",12);
+        xiaotian.eat();
+        class Student extends Person
+        {
+            constructor(name,age,school)
+            {
+                super(name,age);
+                this._school=school;
+            }
+            study()
+            {
+                console.log(this._name+"爱学习");
+            }
+            eat()
+            {
+                super.eat();
+                console.log("学生也需要吃饭");
+            }
+        }
+        let xiaoming=new Student("小明",12,"科院")
+        xiaoming.study();
+        xiaoming.eat();
+
+       
+
+    </script>
+</body>
+</html>

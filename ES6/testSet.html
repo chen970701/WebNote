@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set</title>
+</head>
+<body>
+    Set测试
+    <script>
+        let even=[2,4,6,8,10,2];
+        let odd=[1,3,5,7,9,5];
+        let a=[1,4,6,8];
+        let b=[2,3,6,5];
+        let quchong=new Set(even)
+        console.log([...quchong])
+        console.log([...new Set([...even,...odd])])
+        var bingji= a.filter((v)=>{
+            return new Set(b).has(v)
+        })
+        console.log(bingji)
+        
+    </script>
+</body>
+</html>

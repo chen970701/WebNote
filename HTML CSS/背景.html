@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景</title>
+    <style>
+        .box1
+        {
+            width: 500px;
+            height: 500px;
+            background-color: #bfc;
+            background-image: url("素材/exit.png");
+            background-size: 50px 50px;
+            margin: 10px 10px;
+            border: 20px double black;
+            padding: 10px 10px;
+            background-clip: content-box;
+            background-origin: content-box;
+            background-repeat:repeat-x;
+            background-position:left center;
+        }
+        .box2
+        {
+            width: 500px;
+            height: 500px;
+            background-color: tomato;
+            overflow-y: scroll;
+            background-image: url("素材/jianguo.png");
+            background-size:contain;
+            /* background-size: 100px auto; */
+            background-repeat: no-repeat;
+            background-position: center 0;
+            background-attachment: scroll;
+        }
+        .box3
+        {
+            height: 1000px;
+            width: 100px;
+            margin: 0 auto;
+            background-color: teal;
+            background-image: url("素材/Rocket.jpg");
+            /* background-size:contain; */
+            background-size: 100%;
+            background-position: 0 top;
+            background-repeat: no-repeat;
+           
+            background-attachment:scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2">
+        <div class="box3">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.div1
+{
+    width: 200px;
+    height: 200px;
+    background-color: #bfa;
+    text-align: center;
+   
+    .div3
+    {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        margin: 0 auto;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+}
+.div1::after
+{
+    content: "";
+    height: 100%;
+    width: 0%;
+    background-color: turquoise;
+    display: inline-block;
+     vertical-align: middle;
+}
+@myWidth:200px;
+@myHeight:300px;
+.div2
+{
+    width: @myWidth;
+    height: @myHeight;
+    background-color: blue;
+}
+.test(@w:100px,@h,@bg)
+{
+    width: @w;
+    height: @h;
+    background-color: @bg;
+}
+.div4
+{
+    .test(300px, 300px, yellow)
+}

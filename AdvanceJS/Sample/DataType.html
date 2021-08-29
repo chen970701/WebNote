@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+    }
+    Person.prototype.setAge=function (age) {
+        this.age=age;
+    };
+    function Student(name,age,grade) {
+        Person.call(this,name,age);//用来继承属性
+        this.grade=grade;
+    }
+    Student.prototype=new Person();
+    Student.prototype.constructor=Student;
+    Student.prototype.setGrade=function (grade) {
+        this.grade=grade;
+    }
+
+    var a=new Student("小明",15,3);
+    a.setGrade(4);
+    a.setAge(16);
+    console.log(a);
+</script>
+</body>
+</html>

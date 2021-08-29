@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html
+        {
+            perspective: 1600px;
+            background-color: rgb(238, 236, 227);
+            height: 1000px;
+        }
+        .box1
+        {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            border-radius: 0%;
+            margin-left:0px;
+            transition-delay: 0.1s;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            transition-property:all;
+        }
+        .box1:hover
+        {
+            background-color: brown;
+            border-radius: 50%;
+            /* margin-left: 500px; */
+        }
+        .box2
+        {
+            background-image: url("./素材/雪碧精灵图.jpg");
+            width: 122px;
+            height: 180px;
+            animation-name: move;
+            animation-duration: 1s;
+            animation-timing-function: steps(4);
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            /* fill mode走完之后停在最终位置 */
+            
+        }
+        @keyframes move
+        {
+            from
+            {
+                background-position: 0 0;
+                margin-left: 0px;
+            }
+            to
+            {
+                background-position: -487px 0;
+                margin-left: 100px;
+            }
+        }
+        .clockpan
+        {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background-color:rgba(148, 124, 124, 0.534);
+            border-radius: 50%;
+            border:5px solid black;
+            position: relative;
+        }
+        .hourPointer, .minutePointer,.secondPointer
+        {
+            position: absolute;
+            border-radius: 10px;
+            transform-origin:bottom;
+        }
+        .hourPointer
+        {  
+            width: 10px;
+            height: 80px;
+            margin: auto auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: black;
+            animation-name: hourFrame;
+            animation-timing-function: linear;
+            animation-duration: 43200s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+        .minutePointer
+        {
+            width: 6px;
+            height: 100px;
+            margin: auto auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: black;
+            animation-name: minuteFrame;
+            animation-timing-function: steps(60);
+            animation-duration: 3600s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+        .secondPointer
+        {
+            width: 4px;
+            height: 120px;
+            margin: auto auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: red;
+            animation-name: secondFrame;
+            animation-timing-function: linear;
+            animation-duration: 60s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+        @keyframes secondFrame
+        {
+            from{
+                transform:translateY(-50%) rotateZ(0deg);
+            }
+            to
+            {
+                transform:translateY(-50%) rotateZ(1turn);
+            }
+        }
+        @keyframes minuteFrame
+        {
+            from{
+                transform:translateY(-50%) rotateZ(0deg);
+            }
+            to
+            {
+                transform:translateY(-50%) rotateZ(1turn);
+            }
+        }
+        @keyframes hourFrame
+        {
+            from{
+                transform:translateY(-50%) rotateZ(0deg);
+            }
+            to
+            {
+                transform:translateY(-50%) rotateZ(1turn);
+            }
+        }
+        .box3
+        {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 100px;
+            transform-style: preserve-3d;
+            animation-name: rotateBox;
+            animation-duration: 8s;
+            animation-timing-function:linear;
+            animation-iteration-count: infinite;
+        }
+        .box3 img
+        {
+            position:absolute;
+            vertical-align: bottom;
+            width: 100%;
+            opacity: 80%;
+        }
+        .box3:hover
+        {
+          animation-play-state: paused;
+        }
+        .left
+        {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .right
+        {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .top
+        {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .bottom
+        {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .front
+        {
+            transform: translateZ(100px);
+        }
+        .back
+        {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        @keyframes rotateBox {
+            from
+            {
+                transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            to{
+                transform: rotatex(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="clockpan">
+        <div class="hourPointer"></div>
+        <div class="minutePointer"></div>
+        <div class="secondPointer"></div>
+    </div>
+    <div class="box3">
+        <img class="front" src="/素材/九尾.jpg">
+        <img class="back" src="/素材/冥王龙.jpg">
+        <img class="left" src="/素材/夜鸭.jpg">
+        <img class="right" src="/素材/暴鲤龙.png">
+        <img class="top" src="/素材/老雷.jpg">
+        <img class="bottom" src="/素材/蛙蛙.jpg">
+    </div>
+
+    <script>
+        function getKeyframes(name){
+           var animation={}
+           var styleSheets=document.styleSheets
+           for(var i=0;i<styleSheets.length;i++){
+               var item=styleSheets[i];
+                 for(var j=0;j<item.cssRules.length;j++)
+             {
+                   
+                 if(item.cssRules[j] && item.cssRules[j].name && item.cssRules[j].name==name){
+                     animation.cssRule=item.cssRules[j];
+                  }
+                }
+           }
+           return animation;
+       }
+
+       function initClock()
+       {
+          var hourAnim=getKeyframes("hourFrame");
+          var minuteAnim=getKeyframes("minuteFrame");
+          var secondAnim=getKeyframes("secondFrame");
+          
+          //secondAnim.cssRule.cssText="@keyframes secondFrame { \n  0% { transform: translateY(-50%) rotateZ(50deg); }\n  100% { transform: translateY(-50%) rotateZ(1turn); }\n}"
+          //console.log(secondAnim);
+       }
+       initClock();
+     
+    </script>
+</body>
+</html>
